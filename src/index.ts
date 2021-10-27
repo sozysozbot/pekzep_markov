@@ -1,5 +1,5 @@
 import Discord from "discord.js";
-import fetch from "node-fetch";
+const fetch = require('node-fetch');
 const client = new Discord.Client();
 type Vec = Map<string, number>;
 
@@ -79,12 +79,12 @@ function random_choice(v: Vec): string {
     if (r < val) { return key; }
     r -= val;
   }
-  console.log("input given", v);
+  // console.log("input given", v);
   throw new Error("random choice failed. Maybe the vector was not normalized?")
 }
 
 async function generate() {
-  const raw = await fetch("https://raw.githubusercontent.com/jurliyuuri/spoonfed_pekzep/master/docs/raw.tsv").then(response => response.text());
+  const raw: string = await fetch("https://raw.githubusercontent.com/jurliyuuri/spoonfed_pekzep/master/docs/raw.tsv").then((response: Response) => response.text());
   const pekzep_sentences: string[] = raw.split("\n").filter(a => a.trim() !== "").map(row => row.split("\t")[2]);
 
   const markov1 = transition_matrix({ corpus: pekzep_sentences, delta: 1 });
@@ -99,11 +99,11 @@ async function generate() {
     const vec2 = markov2.get(buffer[i - 2])!;
     const vec3 = markov3.get(buffer[i - 3])!;
     const vec4 = markov4.get(buffer[i - 4])!;
-    console.log(buffer);
-    console.log(vec1);
-    console.log(vec2);
-    console.log(vec3);
-    console.log(vec4);
+    // console.log(buffer);
+    // console.log(vec1);
+    // console.log(vec2);
+    // console.log(vec3);
+    // console.log(vec4);
     const vec = add(add(mult(0.9, vec1), mult(0.06, vec2)), add(mult(0.03, vec3), mult(0.01, vec4)));
 
     buffer[i] = random_choice(vec);
@@ -113,7 +113,9 @@ async function generate() {
 }
 
 client.once('ready', async () => {
-  const msg = `解釈せよ：\n${await generate()}`;
+  const msg = `無理っぽそうであるならばその旨を述べ、普通に言えそうな文であれば訳せ。：
+  ① ${await generate()}
+  ② ${await generate()}`;
   console.log(msg);
 
   // #毎日機文
