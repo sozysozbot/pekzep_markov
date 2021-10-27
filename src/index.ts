@@ -93,7 +93,7 @@ client.once('ready', async () => {
 
   const buffer = ["INITIAL", "INITIAL", "INITIAL", "INITIAL"];
 
-  for (let i = 4; buffer[i] !== "FINAL"; i++) {
+  for (let i = 4; ; i++) {
     const vec1 = markov1.get(buffer[i - 1])!;
     const vec2 = markov2.get(buffer[i - 2])!;
     const vec3 = markov3.get(buffer[i - 3])!;
@@ -106,6 +106,7 @@ client.once('ready', async () => {
     const vec = add(add(mult(0.5, vec1), mult(0.3, vec2)), add(mult(0.15, vec3), mult(0.05, vec4)));
 
     buffer[i] = random_choice(vec);
+    if (buffer[i] === "FINAL") { break; }
   }
 
   const msg = `解釈せよ：\n${buffer.filter(a => a !== "INITIAL" && a !== "FINAL").join("")}`;
