@@ -1,0 +1,45 @@
+{
+  "name": "pekzep_markov",
+  "version": "1.0.0",
+  "description": "",
+  "engines": {
+    "node": "16.x"
+  },
+  "main": "index.js",
+  "scripts": {
+    "start": "node dist/index.js",
+    "test": "node test.js",
+    "build": "tsc"
+  },
+  "dependencies": {
+    "@types/ws": "^7.4.7",
+    "body-parser": "^1.19.0",
+    "discord.js": "^12.5.3",
+    "ejs": "^2.5.6",
+    "eslint": "^7.32.0",
+    "express": "^4.15.2",
+    "fp-ts": "^2.0.3",
+    "io-ts": "^2.0.0",
+    "knuth-shuffle": "^1.0.8",
+    "node-fetch": "^3.0.0",
+    "uuid": "^3.3.3",
+    "ws": "^8.2.0"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.2",
+    "@types/knuth-shuffle": "^1.0.0",
+    "@types/node": "^12.12.28",
+    "@types/uuid": "^3.4.7",
+    "@typescript-eslint/parser": "^4.29.3",
+    "eslint-import-resolver-typescript": "^2.4.0",
+    "eslint-plugin-import": "^2.24.2",
+    "request": "^2.81.0",
+    "tape": "^4.7.0",
+    "typescript": "^3.8.2"
+  },
+  "keywords": [
+    "node",
+    "express"
+  ],
+  "license": "MIT"
+}
