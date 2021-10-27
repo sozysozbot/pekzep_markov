@@ -58,10 +58,11 @@ function transition_matrix(o: { corpus: string[], delta: number }): Map<string, 
     let sum = 0;
     // additive smoothing
     // see https://en.wikipedia.org/wiki/Additive_smoothing for details
-    // I will choose α = 0.5
+    // I will choose α = 0.01; since there is 300 characters available, it seems reasonable to have 300α = 3 samples that we do not know
+    const alpha = 0.01
     for (const [aft, count] of vec) {
-      vec.set(aft, count + 0.5);
-      sum += count + 0.5;
+      vec.set(aft, count + alpha);
+      sum += count + alpha;
     }
 
     // normalize
@@ -82,7 +83,7 @@ function random_choice(v: Vec): string {
   throw new Error("random choice failed. Maybe the vector was not normalized?")
 }
 
-client.once('ready', async () => {
+async function generate() {
   const raw = await fetch("https://raw.githubusercontent.com/jurliyuuri/spoonfed_pekzep/master/docs/raw.tsv").then(response => response.text());
   const pekzep_sentences: string[] = raw.split("\n").filter(a => a.trim() !== "").map(row => row.split("\t")[2]);
 
@@ -103,13 +104,17 @@ client.once('ready', async () => {
     console.log(vec2);
     console.log(vec3);
     console.log(vec4);
-    const vec = add(add(mult(0.5, vec1), mult(0.3, vec2)), add(mult(0.15, vec3), mult(0.05, vec4)));
+    const vec = add(add(mult(0.9, vec1), mult(0.06, vec2)), add(mult(0.03, vec3), mult(0.01, vec4)));
 
     buffer[i] = random_choice(vec);
     if (buffer[i] === "FINAL") { break; }
   }
+  return buffer.filter(a => a !== "INITIAL" && a !== "FINAL").join("");
+}
 
-  const msg = `解釈せよ：\n${buffer.filter(a => a !== "INITIAL" && a !== "FINAL").join("")}`;
+client.once('ready', async () => {
+  const msg = `解釈せよ：\n${await generate()}`;
+  console.log(msg);
 
   // #毎日機文
   (client.channels.cache.get('902991802116739103')! as Discord.TextChannel).send(msg);
