@@ -113,7 +113,9 @@ async function generate() {
 }
 
 client.once('ready', async () => {
-  const msg = `無理っぽそうであるならばその旨を述べ、普通に言えそうな文であれば訳せ。：
+  // `@目機人`
+  const msg = `<@&903054501286645780>
+無理っぽそうであるならばその旨を述べ、普通に言えそうな文であれば訳せ。：
   ① ${await generate()}
   ② ${await generate()}`;
   console.log(msg);
