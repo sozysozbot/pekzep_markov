@@ -21,7 +21,7 @@
     "io-ts": "^2.0.0",
     "knuth-shuffle": "^1.0.8",
     "node-fetch": "2.6.2",
-    "uuid": "^3.3.3",
+    "uuid": "^8.0.0",
     "ws": "^8.2.0"
   },
   "devDependencies": {
@@ -29,7 +29,7 @@
     "@types/knuth-shuffle": "^1.0.0",
     "@types/node": "^12.12.28",
     "@types/node-fetch": "2.5.12",
-    "@types/uuid": "^3.4.7",
+    "@types/uuid": "8.3.1",
     "@typescript-eslint/parser": "^4.29.3",
     "eslint-import-resolver-typescript": "^2.4.0",
     "eslint-plugin-import": "^2.24.2",
