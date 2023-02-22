@@ -29,7 +29,7 @@
     "@types/knuth-shuffle": "1.0.0",
     "@types/node": "18.14.0",
     "@types/node-fetch": "3.0.2",
-    "@types/uuid": "9.0.0",
+    "@types/uuid": "9.0.1",
     "@typescript-eslint/parser": "5.53.0",
     "eslint-import-resolver-typescript": "3.5.3",
     "eslint-plugin-import": "2.27.5",
