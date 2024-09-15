@@ -34,7 +34,7 @@
     "eslint-import-resolver-typescript": "3.6.3",
     "eslint-plugin-import": "2.29.1",
     "request": "2.88.2",
-    "tape": "5.8.1",
+    "tape": "5.9.0",
     "typescript": "5.5.4"
   },
   "keywords": [
