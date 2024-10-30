@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "engines": {
-    "node": "20.x"
+    "node": "22.x"
   },
   "main": "dist/index.js",
   "scripts": {
@@ -27,7 +27,7 @@
   "devDependencies": {
     "@types/express": "5.0.0",
     "@types/knuth-shuffle": "1.0.2",
-    "@types/node": "20.17.3",
+    "@types/node": "22.8.4",
     "@types/node-fetch": "3.0.2",
     "@types/uuid": "10.0.0",
     "@typescript-eslint/parser": "8.12.2",
