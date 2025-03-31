@@ -16,7 +16,7 @@
     "discord.js": "14.17.3",
     "ejs": "^3.0.0",
     "eslint": "^8.0.0",
-    "express": "^4.15.2",
+    "express": "^5.0.0",
     "fp-ts": "^2.0.3",
     "io-ts": "^2.0.0",
     "knuth-shuffle": "^1.0.8",
