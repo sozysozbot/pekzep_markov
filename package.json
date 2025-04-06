@@ -35,7 +35,7 @@
     "eslint-plugin-import": "2.31.0",
     "request": "2.88.2",
     "tape": "5.9.0",
-    "typescript": "5.7.3"
+    "typescript": "5.8.3"
   },
   "keywords": [
     "node",
