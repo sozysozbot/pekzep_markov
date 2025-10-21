@@ -32,7 +32,7 @@
     "@types/uuid": "10.0.0",
     "@typescript-eslint/parser": "8.31.1",
     "eslint-import-resolver-typescript": "4.3.4",
-    "eslint-plugin-import": "2.31.0",
+    "eslint-plugin-import": "2.32.0",
     "request": "2.88.2",
     "tape": "5.9.0",
     "typescript": "5.8.3"
