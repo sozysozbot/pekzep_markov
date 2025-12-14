@@ -25,7 +25,7 @@
     "ws": "^8.2.0"
   },
   "devDependencies": {
-    "@types/express": "5.0.1",
+    "@types/express": "5.0.6",
     "@types/knuth-shuffle": "1.0.2",
     "@types/node": "22.19.3",
     "@types/node-fetch": "3.0.2",
