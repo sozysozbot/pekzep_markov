@@ -30,7 +30,7 @@
     "@types/node": "22.19.3",
     "@types/node-fetch": "3.0.2",
     "@types/uuid": "10.0.0",
-    "@typescript-eslint/parser": "8.49.0",
+    "@typescript-eslint/parser": "8.50.1",
     "eslint-import-resolver-typescript": "4.4.4",
     "eslint-plugin-import": "2.32.0",
     "request": "2.88.2",
